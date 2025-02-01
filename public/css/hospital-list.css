@@ -1,0 +1,169 @@
+
+* {
+    --primary: #d4af37;
+    --secondary: #1a2dad;
+    --other: #1A3D5D;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#name {
+    background: var(--primary);
+    text-align: center;
+    font-size: 16px;
+}
+
+#name span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.login-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color:#fff;
+    background-color: var(--other);
+    padding: 7px 15px 7px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .login-btn:hover {
+    color:#fff;
+    text-decoration: none;
+  }
+  
+  .user-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #fff;
+  }
+  
+  .user-info {
+    display: none;
+    align-items: center;
+  }
+  
+  .user-info.visible {
+    display: flex;
+  }
+  
+  .user-initial {
+    background-color: none;
+    color: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+
+
+
+.custom-navbar {
+    font-family: 'Arial', sans-serif;
+    padding: 5px 5px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--secondary);
+}
+
+.hospital-card {
+    margin-top: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card-title {
+    color: var(--primary);
+}
+
+.degree-text {
+    font-weight: bold;
+    color: var(--secondary);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.emergency-number {
+    font-weight: bold;
+    color: #dc3545;
+    font-size: 1.1rem;
+}
+
+.rating {
+  position: absolute;
+    color: #f39c12;
+    font-size: 1.4rem;
+    top:5px;
+    right: 20px;
+}
+
+.img-center {
+    display: block;
+    margin: auto;
+    width: cover;
+    height: 180px;
+    margin-top: 5px;
+}
+
+.visit-button {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    padding: 5px 30px;
+    background-color: var(--primary);
+    color: #000;
+    font-weight: bold;
+}
+
+.visit-button:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.hospital-address {
+    font-weight: bold;
+    color: #000;
+}
+
+.hospital-services {
+font-weight: normal;
+color: #000;
+}
+
+
+
