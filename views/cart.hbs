@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+    <div class="container my-5">
+    <h2 class="text-center font-weight-bold mb-4">Your Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems">
+            {{#each cartItems}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>${{this.price}}</td>
+                <td><input type="number" value="{{this.quantity}}" min="1" class="quantity-input" data-id="{{this.id}}"></td>
+                <td class="subtotal">${{this.price * this.quantity}}</td>
+                <td><button class="remove-item" data-id="{{this.id}}">Remove</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <div class="cart-summary">
+        <div class="summary-item">
+            <span>Subtotal:</span>
+            <span id="cartSubtotal">$0.00</span>
+        </div>
+        <div class="summary-item">
+            <span>Delivery Charge:</span>
+            <span id="deliveryCharge">$5.00</span>
+        </div>
+        <div class="summary-item">
+            <span>Donation for Medication:</span>
+            <input type="number" id="donationAmount" placeholder="Optional" min="0">
+        </div>
+        <div class="summary-item total">
+            <span>Total:</span>
+            <span id="totalAmount">$0.00</span>
+        </div>
+        <button class="btn btn-primary checkout-button">Proceed to Checkout</button>
+    </div>
+</div>
+
+
+<script src="/js/cart.js"></script>
+</body>
+</html>

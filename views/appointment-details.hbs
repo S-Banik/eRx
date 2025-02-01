@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Details</title>
+  <link rel="stylesheet" href="/css/appointment-details.css">
+</head>
+<body>
+  <div class="header">Appointment Details</div>
+
+
+  <div class="container">
+    <div class="doctor-image">
+      <img id="doctorImage" src="" alt="Doctor Image">
+    </div>
+
+    <table class="details-table">
+      <tr>
+        <th>Doctor Name</th>
+        <td>:</td>
+        <td id="doctorName">Dr. John Doe</td>
+      </tr>
+      <tr>
+        <th>Specialization</th>
+        <td>:</td>
+        <td id="doctorDetails">Expert in Neurology with 15+ years of experience.</td>
+      </tr>
+      <tr>
+        <th>Hospital Name</th>
+        <td>:</td>
+        <td id="hospitalName">Sunrise Medical Center</td>
+      </tr>
+      <tr>
+        <th>Location</th>
+        <td>:</td>
+        <td id="hospitalDetails">123 Sunrise Lane, Downtown City</td>
+      </tr>
+      <tr>
+        <th>Appointment Date</th>
+        <td>:</td>
+        <td id="appointmentDate">16th November 2024</td>
+      </tr>
+    </table>
+
+    <div class="button-container">
+      <button class="btn" onclick="proceedToPayment()">Proceed to Payment</button>
+    </div>
+  </div>
+
+  <script>
+    const doctorName = 'Dr. John Doe';
+    const doctorDetails = 'Expert in Neurology with 15+ years of experience.';
+    const hospitalName = 'Sunrise Medical Center';
+    const hospitalDetails = '123 Sunrise Lane, Downtown City';
+    const appointmentDate = '16th November 2024';
+    const doctorImageSrc = 'https://via.placeholder.com/150'; 
+
+    document.getElementById('doctorName').textContent = doctorName;
+    document.getElementById('doctorDetails').textContent = doctorDetails;
+    document.getElementById('hospitalName').textContent = hospitalName;
+    document.getElementById('hospitalDetails').textContent = hospitalDetails;
+    document.getElementById('appointmentDate').textContent = appointmentDate;
+    document.getElementById('doctorImage').src = doctorImageSrc;
+
+    function proceedToPayment() {
+      alert('Proceeding to Payment!');
+      window.location.href = '/payment';
+    }
+  </script>
+</body>
+</html>

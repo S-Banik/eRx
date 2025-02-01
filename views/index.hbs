@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eRx - by you always</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="icon" href="../assets/eRx.png" type="image/png">
+</head>
+<body>
+    <div id="name-container">
+        <div id="name">
+            <img id="logo" src="/assets/eRx.png" alt="logo"><span>      eRx</span> - by you always
+        </div>
+    </div>
+
+    {{#if user}}
+    <a href="/user-profile" class="login-btn" id="user-info-btn">
+        <div class="user-info visible">
+            <div class="user-initial">{{user.name.[0]}}</div>
+        </div>
+    </a>
+    {{else}}
+        <a href="/login" class="login-btn" id="login-btn">
+            <i class="fas fa-user user-icon"></i>
+            Login
+        </a>
+    {{/if}}
+
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/doctors">Doctors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/hospitals">Hospitals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/search">Search</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: red;" class="nav-link" href="/emergency">Emergeny</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/medicine">Medicines</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3000">
+            <img src="assets/+91 8334908687 (2).png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/3.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="assets/+91 8334908687 (3).png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div class="container-fluid my-4">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 col-6">
+            <a class="all" href="/doctors">
+            <div class="box" style="background-color: rgb(255, 255, 224);">
+              <img src="/assets/stethoscope.png" alt="Book an Appointment">
+              <h5>Book an Appointment</h5>
+            </div>
+          </a>
+          </div>
+          <div class="col-md-6 col-lg-3 col-6">
+            <a class="all" href="/">
+            <div class="box" style="background-color: rgb(235, 235, 255);">
+              <img src="/assets/online.png" alt="Book an Appointment">
+              <h5>Video Consultation</h5>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3 col-6">
+            <a class="all" href="/medicine">
+            <div class="box" style="background-color: rgb(235, 255, 235)">
+              <img src="/assets/medicine.png" alt="Book an Appointment">
+              <h5>Medicine & Essentials</h5>
+            </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-3 col-6">
+            <a class="all" href="/emergency">
+            <div class="box" style="background-color: rgb(255, 235, 235);">
+              <img src="/assets/sos.png" alt="Book an Appointment">
+              <h5>Emergency</h5>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Symptoms -->
+      <div class="section-container">
+        <h2 class="section-title">Symptoms</h2>
+        <div class="symptom-grid">
+           <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="assets/doctor.png" alt="Allergists" class="symptom-icon">
+            <p class="symptom-text">General Physicians</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/tooth (1).png" alt="Dentists" class="symptom-icon">
+            <p class="symptom-text">Dentists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/cardio.png" alt="Cardiologists" class="symptom-icon">
+            <p class="symptom-text">Cardiologists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/orthopedic.png" alt="Orthopedic" class="symptom-icon">
+            <p class="symptom-text">Orthopedic</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/pediatrician.png" alt="Pediatricians" class="symptom-icon">
+            <p class="symptom-text">Pediatricians</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/psychiatrist.png" alt="Psychiatrists" class="symptom-icon">
+            <p class="symptom-text">Psychiatrists</p>
+          </div>
+          </a>
+          
+           <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/cream.png" alt="Dermatologists" class="symptom-icon">
+            <p class="symptom-text">Dermatologists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/ent-doctor.png" alt="ENT" class="symptom-icon">
+            <p class="symptom-text">ENT</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="assets/oncologist.png" alt="Oncologists" class="symptom-icon">
+            <p class="symptom-text">Oncologists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/neuron.png" alt="Neurologists" class="symptom-icon">
+            <p class="symptom-text">Neurologists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/maternity.png" alt="Gynecologists" class="symptom-icon">
+            <p class="symptom-text">Gynecologists</p>
+          </div>
+          </a>
+          <a class="all" href="/">
+          <div class="symptom-block" >
+            <img src="/assets/analysis.png" alt="Gastroenterologists" class="symptom-icon">
+            <p class="symptom-text">Gastroenterologists</p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Doctors -->
+        <div class="carousel-container2">
+        <h2 class="section-title">Feeling Unwell?</h2>
+        <div class="carousel-track2">
+            {{#each doctors}}
+            <a class="carousel-item2 all" href="/doctor/{{this.id}}">
+            <img src="{{this.image_url}}" class="doctor-image" alt="{{this.name}}">
+            <div class="doctor-details">
+                <div class="doctor-name">{{this.name}}</div>
+                <div class="doctor-specialty">{{this.specialty}}</div>
+                <div class="doctor-info">
+                <p><strong>Experience:</strong> {{this.experience}}</p>
+                <p><strong>About:</strong> {{this.about}}</p>
+                </div>
+            </div>
+            </a>
+            {{/each}}
+        </div>
+        <button class="carousel-button2 prev2" onclick="movePrev()">&#10094;</button>
+        <button class="carousel-button2 next2" onclick="moveNext()">&#10095;</button>
+        </div>
+
+
+
+
+
+      <div class="video-section">
+      <div class="description">
+        <h3>Prevent Dengue: Stay Safe, Stay Protected</h3>
+        <p>Prevent Dengue: Stay Safe, Stay Protected! Protect yourself and loved ones 
+          by removing stagnant water and using mosquito repellents. 
+          Learn all the prevention tips—watch our video now!</p>
+      </div>
+    
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/6rn4DGcZQPw?si=NuuXM6EuPBMt2joD" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+
+    <div class="pie">
+      <canvas id="patientChart"></canvas>
+    </div>
+
+    <div id="description">
+      <div class="feature-section">
+        <div class="feature-box">
+          <i class="fas fa-lock"></i>
+          <p>Secure Payment</p>
+        </div>
+        
+        <div class="feature-box">
+          <i class="fas fa-headset"></i>
+          <p>24/7 Support</p>
+        </div>
+        
+        <div class="feature-box">
+          <i class="fas fa-globe"></i>
+          <p>Anywhere Anytime</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+      
+          <div class="footer-section">
+              <img src="/assets/eRx.png" alt="">
+              <div id="company"><Span>eRx</Span> - by you always</div>
+            </div>
+      
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt contact-icon"></i>123 Medical Blvd, Health City</p>
+            <p><i class="fas fa-phone contact-icon"></i>+1 234 567 8901</p>
+            <p><i class="fas fa-envelope contact-icon"></i>contact@medsysapp.com</p>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Our Services</h3>
+            <p>Appointment Scheduling</p>
+            <p>Hospital</p>
+            <p>24/7 Support</p>
+            <p>Emergency Care</p>
+          </div>
+          
+          
+          
+          
+          <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-square"></i></a>
+              <a href="#"><i class="fab fa-twitter-square"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram-square"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; eRx - by you always. All Rights Reserved.</p>
+        </div>
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script>
+         const track = document.querySelector('.carousel-track2');
+  const items = document.querySelectorAll('.carousel-item2');
+  let currentIndex = 0;
+
+  function moveNext() {
+    currentIndex++;
+    if (currentIndex >= items.length) {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  }
+
+  function movePrev() {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = items.length - 1;
+    }
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
+  }
+
+  setInterval(moveNext, 3000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById('patientChart').getContext('2d');
+      const patientChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['2021', '2022', '2023'], 
+          datasets: [
+            {
+              label: 'Inpatients',
+              data: [70, 110, 130],
+              backgroundColor: '#FF4136',
+            },
+            {
+              label: 'Outpatients',
+              data: [130, 160, 220],
+              backgroundColor: '#1A3D5D',
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top',
+            },
+            tooltip: {
+              enabled: true,
+            }
+          },
+          scales: {
+            x: {
+              stacked: true,
+            },
+            y: {
+              beginAtZero: true,
+              stacked: true,
+              title: {
+                display: true,
+                text: 'Number of Patients'
+              }
+            }
+          }
+        }
+      });
+    </script>
+</body>
+</html>
+

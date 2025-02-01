@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="company-logo">
+        <img src="/assets/eRx.png" alt="Company Logo">
+    </div>
+    <div class="company-name"><span>eRx</span> - by you always</div>
+
+    <form action="/login" method="POST">
+        <div class="form-floating">
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" name="user_email" id="email" placeholder=" " required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="form-floating">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" name="user_password" id="password" placeholder=" " required>
+            <label for="password">Password</label>
+        </div>
+
+        <div id="forgot-credentials">
+            <a href="/reset-password" class="forgot-credentials">Forgot password?</a></span>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="login-btn btn-primary">Login</button>
+            <button type="button" class="login-btn btn-outline-danger">
+                <img src="/assets/google.png" alt=""><span style="color: #fb4335;">o</span><span style="color: #EA4335;">o</span><span style="color: #FBBC05;">g</span><span style="color: #34A853;">l</span><span style="color: #4285F4;">e</span>
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="signup">
+            <span>Don't have an account? <a href="/signup" class="create-account">Create</a></span>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Shop - Cancer Medicines</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/medicine.css">
+</head>
+<body>
+
+    <div id="name-container">
+        <div id="name">
+            <img id="logo" src="/assets/eRx.png" alt="logo"><span> eRx</span> - by you always
+        </div>
+    </div>
+
+    {{#if user}}
+    <a href="/user-profile" class="login-btn" id="user-info-btn">
+        <div class="user-info visible">
+            <div class="user-initial">{{user.name.[0]}}</div>
+        </div>
+    </a>
+    {{else}}
+        <a href="/login" class="login-btn" id="login-btn">
+            <i class="fas fa-user user-icon"></i>
+            Login
+        </a>
+    {{/if}}
+
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/doctors">Doctors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/hospitals">Hospitals</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/search">Search</a>
+        </li>
+        <li class="nav-item">
+            <a style="color: red;" class="nav-link" href="/emergency">Emergency</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/medicine">Medicines</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
+
+    <div class="cart-icon">
+        <button href="/cart" class="btn btn-warning position-relative" id="cartButton" onclick="openCartOverlay()">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </div>
+
+
+
+    <div id="cartSection" class="cart-section" style="display: none;">
+        <div class="container my-5 cart-overlay-content">
+            <h2 class="text-center font-weight-bold mb-4">Your Cart</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cartItems"></tbody>
+            </table>
+            <div class="cart-summary">
+                <div class="summary-item">
+                    <span class="bold">Subtotal:</span>
+                    <span id="cartSubtotal">₹0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="bold">Delivery Charge:</span>
+                    <span id="deliveryCharge">₹50.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span class="bold">Total:</span>
+                    <span id="totalAmount">₹0.00</span>
+                </div>
+                <button class="btn checkout-button" onclick="redirectToCheckout()">Proceed to Checkout</button>
+            </div>
+        </div>
+        <button onclick="closeCartOverlay()" class="close-btn btn btn-warning"><img src="/assets/close.png" alt=""></button>
+    </div>
+
+
+    <section id="main-content">
+    <div class="container my-4">
+        <div class="search-bar">
+            <input type="text" class="form-control search-input" placeholder="Search for medicines...">
+            <button class="btn search-btn" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+    <section class="container my-5">
+        <h2 class="text-center font-weight-bold mb-4">Cancer Medicines</h2>
+        <div class="row">
+            {{#each cancerMedicines}}
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+                <div class="medicine-box text-center p-3">
+                    <img src="{{this.image}}" class="img-fluid mb-3" alt="{{this.name}}">
+                    <h6 class="font-weight-bold med-name" data-name="{{this.name}}">{{this.name}}</h6>
+                    <p data-price="{{this.price}}">₹{{this.price}}/tab</p>
+                    <button class="btn btn-sm mt-2 add-to-cart" 
+                            data-id="{{this.id}}" 
+                            data-name="{{this.name}}" 
+                            data-price="{{this.price}}">
+                        Add
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+
+
+
+    <section class="container my-5">
+        <h2 class="text-center font-weight-bold mb-4">Shop by Brands</h2>
+        <div class="row">
+            {{#each otherMedicines}}
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+                <a href="#" class="medicine-box-link">
+                    <div class="medicine-box text-center p-3">
+                        <img src="{{this.image}}" class="img-fluid mb-3" alt="{{this.company_name}}">
+                        <h6 class="font-weight-bold">{{this.company_name}}</h6>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/cart.js"></script>
+</body>
+</html>
